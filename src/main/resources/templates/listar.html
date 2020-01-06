@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container mt-4">
+            <table class="table">
+                <a href="/novo">Novo Cadastro</a>
+                <div class="card-header bg-info text-white">
+                </div>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>ENDERECO</th>
+                        <th>TELEFONE</th>
+                        <th>EMAIL</th>
+                    </tr>
+                </thead>
+                <tbody>               
+                    <tr th:each="cad:${cadastro}">
+                        <td th:text="${cad.id}"></td>
+                        <td th:text="${cad.nome}"></td>
+                        <td th:text="${cad.ender}"></td>
+                        <td th:text="${cad.fone}"></td>
+                        <td th:text="${cad.email}"></td>
+                        <td>
+                            <a th:href="@{/edite/}+${cad.id}"class="btn btn-warning">Editar</a>
+                           
+                            <a th:href="@{/deletar/}+${cad.id}"class="btn btn-danger">Remover</a>
+                             <!--
+                            <a th:onclick="deletar([[${cad.id}]])" class="btn btn-danger">Remover</a>
+                            -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>            
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"</script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="funciones.js"></script>
+    </body>
+</html>
