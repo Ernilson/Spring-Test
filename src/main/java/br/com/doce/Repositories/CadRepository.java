@@ -6,6 +6,8 @@
 package br.com.doce.Repositories;
 
 import br.com.doce.Model.CadModel;
+import br.com.doce.ServiceRole.Role;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +18,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CadRepository extends CrudRepository<CadModel, Long>{
 
-    public void save(long id);
-    
+    void save(long id);
+
+     void save(Role user);
+     
+        
  }

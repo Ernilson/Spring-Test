@@ -5,21 +5,24 @@
  */
 package br.com.doce.Model;
 
+import br.com.doce.ServiceRole.Role;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
+import java.util.Set;
 /**
  *
  * @author eupen
  */
 @Entity
-@Table(name="cadastro")
-public class CadModel implements Serializable{
+@Table(name = "cadastro")
+public class CadModel implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +30,8 @@ public class CadModel implements Serializable{
     private String ender;
     private String fone;
     private String email;
+    @ManyToMany
+    private Set<Role> roles;
 
     public CadModel() {
     }
@@ -134,6 +139,4 @@ public class CadModel implements Serializable{
         return true;
     }
 
-   
-        
 }

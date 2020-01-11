@@ -27,7 +27,7 @@ class ApplicationTests {
         cm.setFone("1234567");
         cm.setEmail("@Sibre");
         
-        service.alterar(cm);
+        service.saveOrUpdate(cm);
     }
 
     // -----------------------LISTAR-TODOS--------------------------
