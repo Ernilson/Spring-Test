@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head">
+        <title>Crud</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!--
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min}">
+        -->
+    </head>
+    <body>
+        <!-- BARRA DE NAVEGAÇÃO -->
+        <header th:fragment="header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <strong>myLogo</strong>
+                        <img src="../../imagens/IMG-20170625-WA0001-1.jpg" alt=""/>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <!-- MENUS -->
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" th:href="@{/index}">Inicio<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"th:href="@{/venda}">Vendas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/novo}">Cadastro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{/produtos}">Produtos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- CORPO DA PAGINA -->
+        
+        <div class="container">
+
+        </div>
+
+        <!-- RODA PÉ DA PAGINA -->
+        <footer th:fragment="footer" class="bg-dark text-center text-white fixed-bottom">
+            <div class="container">
+                <p>todos os diretos pertencentes a Ernilson Daniel Lima de Souza</p>
+            </div>
+            <script type="text/javascript" th:src="@{/js/jquery-3.4.1.min}"/>
+            <script type="text/javascript" th:src="@{/js/popper.min}"/> 
+            <script type="text/javascript" th:src="@{/js/bootstrap.min}"/> 
+            
+        </footer>
+    </body>
+</html>

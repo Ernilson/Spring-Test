@@ -29,7 +29,7 @@ public class CadControl {
     @Autowired
     private CadServiceImpl service;
 
-    @RequestMapping("/")
+   @GetMapping({"/","/home","/index"})
     public String inicio() {
         return "index";
     }
@@ -40,6 +40,15 @@ public class CadControl {
         ModelAndView v = new ModelAndView("add.html");
         v.addObject(new CadModel());
         v.setViewName("add");
+        return v;
+    }
+    
+    //Metodo para incluir venda
+    @RequestMapping(method = RequestMethod.GET, value = "/venda")
+    public ModelAndView venda() {
+        ModelAndView v = new ModelAndView("vendas.html");
+        v.addObject(new CadModel());
+        v.setViewName("vendas");
         return v;
     }
 
@@ -67,7 +76,7 @@ public class CadControl {
         return "editar";
     }
 
-    //Metodo para salvar cadastro  @RequestMapping(method = RequestMethod.POST, value="/alterar")
+    //Metodo para salvar cadastro 
     @RequestMapping(value = "/editsave", method = RequestMethod.POST)
     public ModelAndView editsave(@ModelAttribute("cad") CadModel emp) {
         boolean idd = Boolean.getBoolean("id");

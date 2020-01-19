@@ -4,14 +4,15 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
+<html xmlns:th="http://www.thymeleaf.org">  
+
+    <head th:replace="layout/template :: head"> 
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
+        <header th:replace="layout/template :: header"></header>
         <div class="container mt-4">
             <table class="table">
                 <a href="/novo">Novo Cadastro</a>
@@ -46,8 +47,7 @@ and open the template in the editor.
             </table>            
 
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"</script>
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-      <script src="funciones.js"></script>
+       
     </body>
+     <footer th:replace="layout/template :: footer"></footer>
 </html>

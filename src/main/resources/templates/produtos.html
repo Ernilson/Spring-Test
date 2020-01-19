@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">  
+
+    <head th:replace="layout/template :: head"> 
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <header th:replace="layout/template :: header"></header>
+        <section class="container">
+
+            <form action="#" method="get" 
+                  th:action="@{/produtos}" th:object="${produto}">
+                <div class="panel panel-default">
+                    <!-- 
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="control-label" for="codigo">Código: </label>
+                                    <input class="form-control" id="codigo" th:field="*{id}" />
+                                </div>
+                            </div>
+                    -->
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label class="control-label" for="nome">Nome: </label>
+                            <input class="form-control" id="nome" th:field="*{nome}" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-default" type="submit">
+                        <span class="fa fa-search"></span>Pesquisar</button>
+                </div>
+                <!-- 
+                </div>
+                </div>
+                -->
+            </form>			
+
+            <table class="table table-striped table-bordered">
+                <thead>
+
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>NOME</th>
+                        <th>PREÇO</th> 
+                        <th>EDITAR</th> 
+                        <th>REMOVER</th> 
+                    </tr>
+
+                </thead>
+
+                <tbody th:remove="${#arrays.isEmpty(produtos)} ? all : 'all-but-first'">
+                    <tr th:each="produto: ${produtos}">
+                        <td th:text="${produto.id}">1</td>
+                        <td th:text="${produto.nome}">2</td>
+                        <td th:text="'R$' + ${#numbers.formatDecimal(produto.preco, 3, 'POINT', 2, 'COMMA')}">R$299,00</td>
+                        <td>
+                            <a class="btn btn-warning">ALTERAR</a>                            
+                        </td>
+                        <td>
+                        <a class="btn btn-danger">EXCLUIR</a>
+                        </td>
+                    </tr>					
+
+                </tbody>
+            </table>
+        </section>
+
+        <div class="container">
+            <hr />
+
+        </div>
+
+
+    </body>
+    <footer th:replace="layout/template :: footer"></footer>
+</html>
