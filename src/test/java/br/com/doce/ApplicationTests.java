@@ -1,8 +1,8 @@
 package br.com.doce;
 
-import br.com.doce.Model.CadModel;
-import br.com.doce.ServiceImpl.CadServiceImpl;
-import java.util.List;
+import br.com.doce.Model.Produto;
+import br.com.doce.ServiceImpl.ProdServiceImpl;
+import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,24 +10,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ApplicationTests {
 
-    private CadServiceImpl service;
-
     @Autowired
-    public ApplicationTests(CadServiceImpl service) {
-        this.service = service;
-    }
+    private ProdServiceImpl pservice;
 
     @Test
     void contextLoads() {
-        CadModel cm = new CadModel();
-        
-        cm.setId(2L);
-        cm.setNome("Sibre");
-        cm.setEnder("Hoje");
-        cm.setFone("1234567");
-        cm.setEmail("@Sibre");
-        
-        service.saveOrUpdate(cm);
+       Produto p = new Produto();
+      p.setNome("teste4");
+      p.setPreco(new BigDecimal("10.21"));
+       
+      
+       pservice.saveOrUpdate(p);
     }
 
     // -----------------------LISTAR-TODOS--------------------------

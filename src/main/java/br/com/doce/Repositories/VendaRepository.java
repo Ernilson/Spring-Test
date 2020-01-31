@@ -5,17 +5,13 @@
  */
 package br.com.doce.Repositories;
 
-import br.com.doce.Model.CadModel;
-import java.util.List;
+import br.com.doce.Model.Vendas;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author eupen
  */
-@Repository
-public interface CadRepository extends CrudRepository<CadModel, Long>{
-
+public interface VendaRepository extends CrudRepository<Vendas, Long>{
     
- }
+}

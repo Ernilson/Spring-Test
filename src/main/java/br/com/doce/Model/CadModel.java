@@ -5,7 +5,6 @@
  */
 package br.com.doce.Model;
 
-import br.com.doce.ServiceRole.Role;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -30,8 +29,7 @@ public class CadModel implements Serializable {
     private String ender;
     private String fone;
     private String email;
-    @ManyToMany
-    private Set<Role> roles;
+   
 
     public CadModel() {
     }

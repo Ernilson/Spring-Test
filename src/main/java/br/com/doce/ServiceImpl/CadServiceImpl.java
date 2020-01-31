@@ -52,11 +52,7 @@ public class CadServiceImpl implements CadService {
     @Override
     public CadModel getId(Long id) {
         return cdao.findById(id).get();
-    }
-
-    public void saveOrUpdate(long id) {
-        cdao.save(id);
-    }
+    }   
 
     @Override
     public boolean alterar(CadModel dto) {

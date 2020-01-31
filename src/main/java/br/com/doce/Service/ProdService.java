@@ -5,23 +5,22 @@
  */
 package br.com.doce.Service;
 
-import br.com.doce.ServiceRole.Role;
+import br.com.doce.Model.Produto;
 import java.util.List;
 
 /**
  *
- * @author Convidado
+ * @author eupen
  */
-public interface RoleService {
+public interface ProdService {
     
-    List<Role> listAll();
+     List<Produto> listAll();
 
-    boolean alterar(Role dto);
+    boolean alterar(Produto dto);
 
-    Role getId(Long id);
+    Produto getId(Long id);
 
-    Role saveOrUpdate(Role cm);
+    Produto saveOrUpdate(Produto cm);
 
     void delete(Long id);
-    
 }

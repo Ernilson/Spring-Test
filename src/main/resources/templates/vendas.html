@@ -7,13 +7,29 @@ and open the template in the editor.
 <html xmlns:th="http://www.thymeleaf.org">  
 
     <head th:replace="layout/template :: head"> 
-        <title>TODO supply a title</title>
+        <title>Vendas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-          <header th:replace="layout/template :: header"></header>
-        <div>Vendas</div>
+        <header th:replace="layout/template :: header"></header>
+        <form action="#" method="get" 
+              th:action="@{/produtos}" th:object="${produto}">
+            <div class="panel panel-default">
+
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label class="control-label" for="">Descrição: </label>
+                        <input class="form-control" id=""  />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">
+                    <span class="fa fa-search"></span>Pesquisar</button>
+            </div>
+        </form>
     </body>
     <footer th:replace="layout/template :: footer"></footer>
 </html>
